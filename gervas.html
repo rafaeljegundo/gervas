@@ -1,0 +1,46 @@
+<head>
+  <title>startupfinance</title>
+</head>
+
+<body>
+	<h1>Show me the money!</h1>
+ 	<div class ="dashboard">{{> dashboard}}</div>
+ 	<div class="main">{{> main}}</div>
+</body>
+
+<template name="dashboard">	
+  	<!-- <div class="stat" >Time left: {{timeleft}} </div> -->
+  	<div class="stat" >Saldo: {{result}}</div>
+</template>
+
+<template name="main">
+	<h3>Movements</h3>
+  <div class="list">
+ 	{{#each movements}}
+ 		{{> mov}}
+ 	{{/each}}
+ 	<br>
+  	{{> new_movement}}
+  </div>
+</template>
+
+<template name="mov">
+	<table>
+		<tr>
+			<td>{{name}}</td>
+			<td>{{value}}</td>
+			<td>{{date}}</td>
+			<td><input type="button" value="X" class="delete" /></td>
+		</tr>
+	</table>
+</template>
+
+<template name="new_movement">
+	Tag
+    <input id="new_movement_name" type="text" />
+    Value
+    <input id="new_movement_value" type="text" />
+    Date
+    <input id="new_movement_date" type="text" />
+    <input type="button" class="add" value="Add Movement" />
+</template>
