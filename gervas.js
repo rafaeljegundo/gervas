@@ -31,7 +31,7 @@ if (Meteor.is_client) {
       var new_movement_name = document.getElementById("new_movement_name").value;
       var new_movement_value = document.getElementById("new_movement_value").value;      
       var new_movement_date = document.getElementById("new_movement_date").value;      
-      Movements.insert({name: new_movement_name, value: new_movement_value, date: Date.parse(new_movement_date)});
+      Movements.insert({name: new_movement_name, value: new_movement_value, date: new_movement_date});
     }
   };
 }
